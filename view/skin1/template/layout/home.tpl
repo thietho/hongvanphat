@@ -40,42 +40,14 @@ var DIR_COMPONENT = '<?php echo HTTP_SERVER.DIR_COMPONENT?>';
 <body>
 	<div style="display:none"><?php echo @$meta_keyword?></div>
     <header>
-    	<div class="hvp-web-width">
-    		
-            <ul id="mainmenu">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Dự án</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-            <a href="#"><img id="hvp-logo" src="<?php echo HTTP_SERVER.DIR_IMAGE.'logo.png'?>" /></a>
-        </div>
+    	<?php echo @$header?>
     </header>
-    <nav>
-    	<div class="hvp-web-width">
-    		<h1>Trang chủ</h1>
-        </div>
-    </nav>
-    <section>
-    	<div class="hvp-web-width">
-            
-            <p>
-            Là khởi sự cho những đam mê, hoài bão được thể hiện chính mình trong từng ngày cuộc sống, HVP Creative Design là tập hợp của những người trẻ năng động, tự tin, tràn đầy năng lượng và nhiệt huyết, với tâm huyết mang đến cho khách hàng những giải pháp hoàn hảo.trong việc thiết kế, ấn quảng cáo và may đo đồng phục các loại...
+    <?php echo @$content?>
+        
     
-    Không ngừng trau dồi học hỏi theo thời gian cộng với kinh nghiệm phục vụ tận tình, vốn đã được minh chứng bởi các khách hàng trung thành là những thương hiệu có uy tín trên thị trường, chúng tôi vẫn luôn mong muốn ngày càng được phục vụ tốt hơn nữa cho tất cả khách hàng của mình, những người đã đồng hành trong suốt thời gian qua.
-     
-    Nhanh chóng, tận tình và chính xác luôn là tiêu chí phục vụ xuyên suốt, đừng ngần ngại liên lạc ngay với chúng tôi khi có nhu cầu. Chúng tôi luôn trân trọng những cơ hội để được phục vụ.
-            </p>
-        </div>
-    </section>
     <footer>
-    	<div class="hvp-web-width">
-            Công ty TNHH Hồng Vạn Phát<br />
-            Địa chỉ: 123 Cao Thắng, Phường 3, Quận 3, Tp HCM<br />
-            Điện thoại: 0908 123 456<br />
-            Website: <a href="#">www.hongvanphat.com</a>
-        </div>
+    	<?php echo @$footer?> 
+    	
     </footer>
     
 

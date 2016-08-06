@@ -49,15 +49,15 @@ class ControllerCommonHeader extends Controller
 			if(@$item['sitemapid'] == $rootid) 
 				$currenttab = "class='active'";
 			
-			$link = "<a ".$currenttab."><span>".$item['sitemapname']."</span></a>";
+			$link = "<a ".$currenttab.">".$item['sitemapname']."</a>";
 			
 			if(@$item['moduleid'] != "group")
 			{
 				
-				$link = "<a ".$currenttab." href='".$this->document->createLink($item['sitemapid'])."' title='".$item['sitemapname']."' ><span>".html_entity_decode($item['sitemapname'])."</span></a>";
+				$link = "<a ".$currenttab." href='".$this->document->createLink($item['sitemapid'])."' title='".$item['sitemapname']."' >".html_entity_decode($item['sitemapname'])."</a>";
 			}
 			if(@$item['moduleid'] == "homepage"){
-				$link = "<a ".$currenttab." href='".HTTP_SERVER."'><span>".html_entity_decode($item['sitemapname'])."</span></a>";
+				$link = "<a ".$currenttab." href='".HTTP_SERVER."'>".html_entity_decode($item['sitemapname'])."</a>";
 			}
 			
 			$str .= "<li>";

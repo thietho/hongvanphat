@@ -58,7 +58,22 @@ a
 }
 #mainmenu ul
 {
-	list-style:none;	
+	list-style:none;
+	display:none;	
+	position:absolute;
+	background:#000;;
+	padding:0;
+	width:200px;
+}
+#mainmenu ul li
+{
+	padding:10px;
+	width:200px;	
+}
+#mainmenu ul li ul
+{
+	margin-left:1850px;
+	top:0;
 }
 nav
 {
@@ -68,12 +83,17 @@ nav
 	font-size:2em;
 	border-top:#fff 2px solid;
 }
+nav a
+{
+	color:#fff;
+}
 /* Footer*/
 footer
 {
 	background:#000;
 	color:#fff;
 	border-top:#D52B1E 2px solid;
+	padding:20px;
 }
 footer a
 {

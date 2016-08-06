@@ -208,7 +208,7 @@ class ControllerPageDetail extends Controller
 				}
 			}
 			
-			$this->loadSiteBar();
+			//$this->loadSiteBar();
 		}
 		$this->id="content";
 		$this->template="page/detail.tpl";
