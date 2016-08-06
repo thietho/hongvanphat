@@ -21,48 +21,64 @@
 <?php echo @$meta_image?>
 
 </head>
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>jquery.js"></script>
     <script type='text/javascript' language='javascript' src='<?php echo HTTP_SERVER.DIR_VIEW?>js/jquery-ui.js'></script>
     <script type='text/javascript' language='javascript' src='<?php echo HTTP_SERVER.DIR_VIEW?>js/jquery.lazy.js'></script>
     <script type='text/javascript' language='javascript' src='<?php echo HTTP_SERVER.DIR_VIEW?>js/jquery.blockUI.js'></script>
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>divbox.js"></script>
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>me.js"></script>
-    <script type='text/javascript' src='<?php echo HTTP_SERVER.DIR_JS?>jquery.easing.1.3.js'></script> 
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>swfobject.js" charset="utf-8"></script>
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>jquery.bxslider.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>md5.js"></script>
-    
-    <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>jquery.mCustomScrollbar.concat.min.js"></script>
+    </script>
 	<script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>common.js"></script>
     <script type="text/javascript" src="<?php echo HTTP_SERVER.DIR_JS?>cart.js"></script>
     
     <link rel='stylesheet' type='text/css' href='<?php echo HTTP_SERVER.DIR_VIEW?>css/jquery-ui.css'>
-    <link href="<?php echo HTTP_SERVER.DIR_CSS?>jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo HTTP_SERVER.DIR_CSS?>global.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo HTTP_SERVER.DIR_CSS?>divbox.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo HTTP_SERVER.DIR_CSS?>bxslider.css" rel="stylesheet" type="text/css">
+    
     <link type="text/css" rel="stylesheet" href="<?php echo HTTP_SERVER.DIR_CSS?>style.css" />
     
 <script language="javascript">
 var HTTP_SERVER = '<?php echo HTTP_SERVER?>';
 var DIR_COMPONENT = '<?php echo HTTP_SERVER.DIR_COMPONENT?>';
 </script>	   
-<body style=" ">
+<body>
 	<div style="display:none"><?php echo @$meta_keyword?></div>
+    <header>
+    	<div class="hvp-web-width">
+    		
+            <ul id="mainmenu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Dự án</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+            <a href="#"><img id="hvp-logo" src="<?php echo HTTP_SERVER.DIR_IMAGE.'logo.png'?>" /></a>
+        </div>
+    </header>
+    <nav>
+    	<div class="hvp-web-width">
+    		<h1>Trang chủ</h1>
+        </div>
+    </nav>
+    <section>
+    	<div class="hvp-web-width">
+            
+            <p>
+            Là khởi sự cho những đam mê, hoài bão được thể hiện chính mình trong từng ngày cuộc sống, HVP Creative Design là tập hợp của những người trẻ năng động, tự tin, tràn đầy năng lượng và nhiệt huyết, với tâm huyết mang đến cho khách hàng những giải pháp hoàn hảo.trong việc thiết kế, ấn quảng cáo và may đo đồng phục các loại...
     
+    Không ngừng trau dồi học hỏi theo thời gian cộng với kinh nghiệm phục vụ tận tình, vốn đã được minh chứng bởi các khách hàng trung thành là những thương hiệu có uy tín trên thị trường, chúng tôi vẫn luôn mong muốn ngày càng được phục vụ tốt hơn nữa cho tất cả khách hàng của mình, những người đã đồng hành trong suốt thời gian qua.
+     
+    Nhanh chóng, tận tình và chính xác luôn là tiêu chí phục vụ xuyên suốt, đừng ngần ngại liên lạc ngay với chúng tôi khi có nhu cầu. Chúng tôi luôn trân trọng những cơ hội để được phục vụ.
+            </p>
+        </div>
+    </section>
+    <footer>
+    	<div class="hvp-web-width">
+            Công ty TNHH Hồng Vạn Phát<br />
+            Địa chỉ: 123 Cao Thắng, Phường 3, Quận 3, Tp HCM<br />
+            Điện thoại: 0908 123 456<br />
+            Website: <a href="#">www.hongvanphat.com</a>
+        </div>
+    </footer>
     
-    <?php echo @$header?>
 
- <div class="fix1000" style=" "><div class="clear" style="height:5px;"></div> 
- 	<div class="">
-        <?php echo @$content?>
-        
-        <?php echo @$footer?> 
-        
-<script type="text/javascript">
-	$('a.lightbox').divbox();
-</script>  
-      </div>
- </div>
+ 
 </body>
 </html>
