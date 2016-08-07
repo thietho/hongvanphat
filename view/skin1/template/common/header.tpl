@@ -1,5 +1,5 @@
 <div class="hvp-web-width">
-    		
+    <img id="mainmenu-icon" src="<?php echo HTTP_SERVER.DIR_IMAGE.'menumain-icon.png'?>" />	
     <ul id="mainmenu">
         <?php echo $mainmenu?>
     </ul>

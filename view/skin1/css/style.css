@@ -46,6 +46,7 @@ a
 	list-style:none;
 	margin: 50px 0 50px 390px;
 	padding:0;
+	width:595px;
 }
 #mainmenu li
 {
@@ -75,6 +76,10 @@ a
 	margin-left:1850px;
 	top:0;
 }
+#mainmenu-icon
+{
+	display:none;	
+}
 nav
 {
 	background:#D52B1E;
@@ -98,4 +103,31 @@ footer
 footer a
 {
 	color:#fff;	
+}
+@media only screen and ( max-width: 640px ) {
+#hvp-logo
+{
+	width:100%;	
+}
+.hvp-web-width
+{
+	width:auto;	
+}
+header
+{
+	height:auto;
+	
+}
+#mainmenu
+{
+	display:none	
+}
+#mainmenu-icon
+{
+	display:block;	
+	width:50px;
+	position:absolute;
+	right:0;
+	top:200px;
+}
 }

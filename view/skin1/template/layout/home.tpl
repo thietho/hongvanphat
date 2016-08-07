@@ -13,7 +13,7 @@
 <meta name="revisit-after" content="7" />
 <meta name="creator" content="Ho Lan Solutions" />
 <meta name="publisher" content="Ho Lan Solutions" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="<?php echo @$title?>">
 <meta property="og:type" content="Website">
 <meta property="og:url" content="<?php echo @$url?>">
