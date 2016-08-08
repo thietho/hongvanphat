@@ -154,7 +154,7 @@ header
 #mainmenu ul
 {
 	list-style:none;
-	display:none;	
+	display:block;	
 	position:relative;
 	background:#d52b1e;;
 	padding:0;

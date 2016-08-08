@@ -9,18 +9,19 @@
 
 function mainmenu()
 {
-	$(" #mainmenu ul ul ").css({display: "none"}); // Opera Fix
-	$("#mainmenu li").click(function(e) {
-		if($(this).find('ul:first').css('display') == 'none')
-        	$(this).find('ul:first').css({'display': "block"})
-		else
-			$(this).find('ul:first').css({'display': "none"})
-    });
-	/*$("#mainmenu li").hover(function(){
-			$(this).find('ul:first').css({display: "none"}).show();
-			},function(){
-			$(this).find('ul:first').css({'display':'none'});
-			});*/
+	if($('#mainmenu').css('display') != 'none')
+	{
+		$("#mainmenu ul ul ").css({display: "none"}); // Opera Fix
+		$("#mainmenu li").hover(function(){
+				$(this).find('ul:first').css({display: "none"}).show();
+				},function(){
+				$(this).find('ul:first').css({'display':'none'});
+				});
+	
+	}
+		//alert('bbb');
+		
+	
 }
 
 $('#mainmenu-icon').click(function(e) {
@@ -28,6 +29,18 @@ $('#mainmenu-icon').click(function(e) {
 		$('#mainmenu').show();
 	else
 		$('#mainmenu').hide();
+	
+});
+$(this).resize(function(e) {
+	
+    if($('#mainmenu-icon').css('display') == 'none')
+		$('#mainmenu').show('',function(){mainmenu();});
+	else
+		$('#mainmenu').hide('',function(){
+			$("#mainmenu ul").css({display: "block"}); // Opera Fix
+			$("#mainmenu li").unbind('hover');
+			alert('aaa');
+		});
 	
 });
 
