@@ -19,7 +19,6 @@ function mainmenu()
 				});
 	
 	}
-		//alert('bbb');
 		
 	
 }
@@ -39,7 +38,7 @@ $(this).resize(function(e) {
 		$('#mainmenu').hide('',function(){
 			$("#mainmenu ul").css({display: "block"}); // Opera Fix
 			$("#mainmenu li").unbind('hover');
-			alert('aaa');
+			
 		});
 	
 });

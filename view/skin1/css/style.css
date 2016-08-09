@@ -9,6 +9,10 @@ body
 	margin:0 ;
 	
 }
+p
+{
+	margin:0;	
+}
 header
 {
 	background:#000;
@@ -91,6 +95,12 @@ nav
 nav a
 {
 	color:#fff;
+	
+}
+section
+{
+	padding:10px;
+	text-align:justify;
 }
 /* Footer*/
 footer
