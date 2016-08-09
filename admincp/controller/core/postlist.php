@@ -10,22 +10,7 @@ class ControllerCorePostlist extends Controller
 		
 		$sitemapid = @$this->request->get['sitemapid'];
 		
-		if(!@$this->user->hasPermission($sitemapid, "access"))
-		{
-			@$this->data['permissionAccess'] = false;
-		}
-		if(!@$this->user->hasPermission($sitemapid, "add"))
-		{
-			@$this->data['permissionAdd'] = false;
-		}
-		if(!@$this->user->hasPermission($sitemapid, "edit"))
-		{
-			@$this->data['permissionEdit'] = false;
-		}
-		if(!@$this->user->hasPermission($sitemapid, "delete"))
-		{
-			@$this->data['permissionDelete'] = false;
-		}
+		
 	 	
    	}
 	
