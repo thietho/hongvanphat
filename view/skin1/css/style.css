@@ -48,14 +48,14 @@ a
 {
 	position:absolute;	
 	list-style:none;
-	margin: 50px 0 50px 390px;
+	margin: 50px 0 50px 346px;
 	padding:0;
-	width:595px;
+	width:632px;
 }
 #mainmenu li
 {
 	float:left;
-	padding:10px 30px;
+	padding:10px;
 }
 #mainmenu li a
 {

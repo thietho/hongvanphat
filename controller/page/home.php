@@ -33,7 +33,7 @@ class ControllerPageHome extends Controller
 			//Banner home
 			$template = array(
 						  'template' => "home/banner.tpl",
-						  'width' => 280,
+						  'width' => 980,
 						  'height' =>0
 						  );
 		
