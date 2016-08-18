@@ -13,7 +13,9 @@ class ControllerPageHome extends Controller
 	public function index()
 	{
 		
-		
+		$this->load->model('core/media');
+		$this->load->model('core/sitemap');
+		$this->load->helper('image');
 		$this->destop();
 		//$this->mobile();
 	}
@@ -22,14 +24,14 @@ class ControllerPageHome extends Controller
 	{
 		if(@$this->cachehtml->iscacht($this->name) == false)
 		{
-			$this->load->model('core/media');
+			
 			//Brand
-			$template = array(
+			/*$template = array(
 						  'template' => "module/category_brand.tpl"
 						  );
 		
 			$arr = array("nhanhieu",$template);
-			$this->data['brand'] = $this->loadModule('module/category','getList',$arr);
+			$this->data['brand'] = $this->loadModule('module/category','getList',$arr);*/
 			//Banner home
 			$template = array(
 						  'template' => "home/banner.tpl",
@@ -40,17 +42,21 @@ class ControllerPageHome extends Controller
 			$arr = array("bannerhome",0,"",$template);
 			$this->data['bannerhome'] = $this->loadModule('module/block','getList',$arr);
 			
+			$arr = array("thiet-ke");
+			$this->data['thietke'] = $this->loadModule('page/home','getSiteMap',$arr);
 			
-			
+			$arr = array("in-an-san-xuat");
+			$this->data['inansanxuat'] = $this->loadModule('page/home','getSiteMap',$arr);
 			//$this->loadSiteBar();
 			
 		}
-		$this->document->title .= $this->document->setup['Title'];
+		$this->document->title = $this->document->setup['Title'];
 		$this->id="content";
 		$this->template="page/home.tpl";
 		$this->layout="layout/home";
 		$this->render();
 	}
+	
 	private function loadSiteBar()
 	{
 		//Left sitebar
@@ -107,22 +113,18 @@ class ControllerPageHome extends Controller
 		$this->data['rightsitebar']['question'] = $this->loadModule('sitebar/question');*/
 	}
 	
-	
-	function getProduct($status)
-    {
-        
-        //$siteid = $this->member->getSiteId();
-        //$sitemaps = $this->model_core_sitemap->getListByModule("module/product", $siteid);
-        //$arrsitemapid = $this->string->matrixToArray($sitemaps,"sitemapid");
-        $queryoptions = array();
-        $queryoptions['mediaparent'] = '';
-        $queryoptions['mediatype'] = 'module/product';
-        $queryoptions['refersitemap'] = '%';
-        $queryoptions['groupkeys'] = $status;
-        $data = $this->model_core_media->getPaginationList($queryoptions);
-
-        return $data;
-    }
-	
+	function getSiteMap($sitemapid)
+	{
+		$siteid = $this->member->getSiteId();
+		$sitemap = $this->model_core_sitemap->getItem($sitemapid,$siteid);
+		$sitemap['childs'] = $this->model_core_sitemap->getListByParent($sitemapid,$siteid);
+		$sitemap['post'] = $this->model_core_media->getItem($this->member->getSiteId().$sitemapid);
+		$sitemap['post']['imagethumbnail'] = HelperImage::resizePNG($sitemap['post']['imagepath'],200, 200);
+		$this->data['sitemap'] = $sitemap; 
+		$this->id="content";
+		$this->template="home/sitemap.tpl";
+		$this->render();
+		
+	}
 }
 ?>
