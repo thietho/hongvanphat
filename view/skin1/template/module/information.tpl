@@ -1,43 +1,42 @@
-<?php if(@$this->document->sitemapid != "faq"){ ?>
-<div class="ben-editor">
+<?php
+	$class =""; 
+	if(@count($childs))
+    {
+    	$class = "hvp-left hvp-info-content";
+	}
+?>
+
+
+
+<div class="hvp-editor <?php echo $class?>">
     <p>
         <?php echo @$post['description']?>
     </p>
 </div>
+
+<?php if(@count($childs)){ ?>
+<link rel="stylesheet" href="<?php echo HTTP_SERVER.DIR_VIEW?>css/colorbox.css" />
+<script src="<?php echo HTTP_SERVER.DIR_VIEW?>js/jquery.colorbox.js"></script>
+<div class="hvp-info-childs hvp-right">
+	<?php foreach($childs as $item){ ?>
+    	<a href="<?php echo $this->document->createLink($item['sitemapid'])?>">
+    		<img src="<?php echo $item['media']['imagethumbnail']?>">
+    	</a>
+    <?php } ?>
+</div>
 <?php } ?>
-<?php if(@count($child)){ ?>
-<style>
-.faq-item
-{
-	display:none;	
-}
-</style>
-<div>
-	<?php foreach($child as $item){ ?>
-    <p>
-    	<a class="faq-title" href="#<?php echo @$item['mediaid']?>" rel="<?php echo @$item['mediaid']?>"><?php echo @$item['title']?></a>
-        <div id="faq-item-<?php echo @$item['mediaid']?>" class="faq-item">
-        	<?php echo html_entity_decode($item['description'])?>
-        </div>
-    </p>
+<div class="clearer">&nbsp;</div>
+<?php if(count($attachment)){ ?>
+<div id="hvp-info-attachment">
+	<?php foreach($attachment as $item){ ?>
+    <a class="zoom" href="<?php echo $item['preview']?>">
+    	<img src="<?php echo $item['imagethumbnail']?>">
+    </a>
     <?php } ?>
 </div>
 <script language="javascript">
 $(document).ready(function(e) {
-    url = document.location;
-		arr = (""+url).split('#');
-	mediaid = arr[1];
-	showFAQ(mediaid);
-});
-function showFAQ(mediaid)
-{
-	$(".faq-item").hide("slow");
-	$("#faq-item-"+mediaid).delay(100).show("show");
-}
-$(".faq-title").click(function(){
-	showFAQ($(this).attr("rel"));
-	
+    $(".zoom").colorbox({rel:'zoom'});
 });
 </script>
 <?php } ?>
-<div class="clearer">&nbsp;</div>
