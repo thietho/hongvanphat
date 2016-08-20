@@ -169,6 +169,15 @@ hvp-editor
 {
 	padding:11px;
 }
+.hvp-footer-clients
+{
+	width:300px;
+}
+.hvp-footer-clients-title
+{
+	font-size:1.2em;
+	font-weight:bold;
+}
 @media only screen and ( max-width: 640px ) {
 #hvp-logo
 {

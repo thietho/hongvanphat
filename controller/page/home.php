@@ -47,6 +47,8 @@ class ControllerPageHome extends Controller
 			
 			$arr = array("in-an-san-xuat");
 			$this->data['inansanxuat'] = $this->loadModule('page/home','getSiteMap',$arr);
+			
+			
 			//$this->loadSiteBar();
 			
 		}

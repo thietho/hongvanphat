@@ -21,6 +21,18 @@ class ControllerSitebarWeblink extends Controller
 		$queryoptions['refersitemap'] = $sitemapid;
 		$medias = $this->model_core_media->getPaginationList($queryoptions, $step, $to);
 		$index = -1;
+		$arr = array();
+		if(count($medias)> 6)
+		{
+			while(count($arr) < 6)
+			{
+				$key = rand(0,count($medias)-1);
+				if(!in_array($key,$arr))
+					$arr[] = $key;
+			}
+			
+		}
+		$this->data['arrpos'] = $arr;
 		foreach($medias as $media)
 		{
 			$index += 1;
@@ -30,7 +42,7 @@ class ControllerSitebarWeblink extends Controller
 			$imagethumbnail = "";
 			if(@$media['imagepath'] != ""  )
 			{
-				$imagethumbnail = HelperImage::resizePNG($media['imagepath'], 175,0);
+				$imagethumbnail = HelperImage::resizePNG($media['imagepath'], 90,90);
 			}
 			
 			$weblink = $this->model_core_media->getInformation($media['mediaid'], "Link");
@@ -43,9 +55,10 @@ class ControllerSitebarWeblink extends Controller
 				'statusdate' => $this->date->formatMySQLDate($media['statusdate'], 'longdate', "/"),
 				'weblink' => $weblink,
 				'link' => $link
-			);
-			
+			);	
 		}
+		
+		
 		$this->id="content";
 		$this->template="sitebar/weblink.tpl";
 		$this->render();
