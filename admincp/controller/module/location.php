@@ -6,25 +6,7 @@ class ControllerModuleLocation extends Controller
 	public function index()
 	{
 		$sitemapid = @$this->request->get['sitemapid'];
-		if(!@$this->user->hasPermission($sitemapid, "access"))
-		{
-			@$this->response->redirect("?route=common/permission");
-		}
-		@$this->data['permissionAdd'] = true;
-		@$this->data['permissionEdit'] = true;
-		@$this->data['permissionDelete'] = true;
-		if(!@$this->user->hasPermission($sitemapid, "add"))
-		{
-			@$this->data['permissionAdd'] = false;
-		}
-		if(!@$this->user->hasPermission($sitemapid, "edit"))
-		{
-			@$this->data['permissionEdit'] = false;
-		}
-		if(!@$this->user->hasPermission($sitemapid, "delete"))
-		{
-			@$this->data['permissionDelete'] = false;
-		}
+		
 		//@$this->load->language('quanlykho/khachhang');
 		//@$this->data = array_merge(@$this->data, @$this->language->getData());
 		@$this->getForm();

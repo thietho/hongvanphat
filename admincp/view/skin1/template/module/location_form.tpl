@@ -39,7 +39,7 @@ function toggleBounce() {
 
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDREKHzZPitTnAFDGz-Rpfj1wYP75-KOLU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcnqRxb6aZi_JybVFKrjKOQCb5PoGHj0s&callback=initMap">
     </script>
 <div class="section" id="sitemaplist">
 
