@@ -15,8 +15,7 @@
 </div>
 
 <?php if(@count($childs)){ ?>
-<link rel="stylesheet" href="<?php echo HTTP_SERVER.DIR_VIEW?>css/colorbox.css" />
-<script src="<?php echo HTTP_SERVER.DIR_VIEW?>js/jquery.colorbox.js"></script>
+
 <div class="hvp-info-childs hvp-right">
 	<?php foreach($childs as $item){ ?>
     	<a href="<?php echo $this->document->createLink($item['sitemapid'])?>">
@@ -27,6 +26,8 @@
 <?php } ?>
 <div class="clearer">&nbsp;</div>
 <?php if(count($attachment)){ ?>
+<link rel="stylesheet" href="<?php echo HTTP_SERVER.DIR_VIEW?>css/colorbox.css" />
+<script src="<?php echo HTTP_SERVER.DIR_VIEW?>js/jquery.colorbox.js"></script>
 <div id="hvp-info-attachment">
 	<?php foreach($attachment as $item){ ?>
     <a class="zoom" href="<?php echo $item['preview']?>">
